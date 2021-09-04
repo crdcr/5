@@ -5,10 +5,11 @@
 <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
 <title>untitled</title>
 <style>
+
 </style>
 </head>
 <body>
-
+<video id="vdc" controls autoplay style="max-width:100%" onended="nextv()"></video>
 <script>
 var client = new WebTorrent()
 var playv = 'Sintel.mp4'
@@ -19,8 +20,9 @@ client.add(torrentId, function (torrent) {
     return file.name.endsWith(playv)
   })
 
-  file.appendTo('body')
+  file.renderTo(document.getElementById('vdc'))
 })
+
 </script>
 
 </body>
