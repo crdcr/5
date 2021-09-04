@@ -21,6 +21,9 @@ client.add(torrentId, function (torrent) {
   })
 
   file.renderTo(document.getElementById('vdc'))
+document.getElementById('vdc').addEventListener('loadedmetadata', function() {
+  this.currentTime = 50;
+}, false);
 })
 
 </script>
